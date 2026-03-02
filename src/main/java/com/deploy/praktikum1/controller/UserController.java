@@ -2,7 +2,6 @@ package com.deploy.praktikum1.controller;
 
 import com.deploy.praktikum1.model.dto.UserAddRequest;
 import com.deploy.praktikum1.model.dto.UserDto;
-import com.deploy.praktikum1.model.entity.User;
 import com.deploy.praktikum1.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -45,7 +44,7 @@ public class UserController {
     }
 
     @GetMapping(
-            path = "/api/users",
+            path = "/api/users/{id}",
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public ResponseEntity<Map<String, Object>> getUserById(@PathVariable("id") String id){
